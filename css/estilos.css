@@ -1,11 +1,11 @@
-/* Reset de márgenes y rellenos */
+/* Reseteo de márgenes y rellenos para todos los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fuente global */
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -31,8 +31,6 @@ body {
 header {
     width: 100%;
     height: 600px;
-    background: #c300ff;
-    background: -webkit-linear-gradient(to right, hsla(293, 100%, 50%, 0.459), hsla(273, 45%, 52%, 0.664)), url(../images/img/bk\ .jpg);
     background: linear-gradient(to right, hsla(276, 95%, 50%, 0.459), hsla(276, 45%, 52%, 0.664)), url(../images/img/bk\ .jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -78,8 +76,6 @@ header .textos-header {
     color: #000;
 }
 
-
-
 .logo-container {
     text-align: center;
     margin: 20px 0;
@@ -101,9 +97,12 @@ header .textos-header {
 
 /* Onda decorativa */
 .wave {
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    overflow: hidden;
 }
 
 /* Sección "Sobre nosotros" */
@@ -142,7 +141,7 @@ main .sobre-nosotros {
     }
 
 .contenido-textos p {
-    padding: 0px 0px 30px 15px;
+    padding: 0 0 30px 15px;
     font-weight: 300;
     text-align: justify;
 }
@@ -158,25 +157,14 @@ main .sobre-nosotros {
     flex-wrap: wrap;
 }
 
-.tabla-catalogo table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-.tabla-catalogo td {
-    padding: 5px;
-    width: 25%;
-    text-align: center;
-}
-
 .imagen-port {
-    width: 100%;
+    width: 24%;
     height: 200px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-bottom: 10px;
 }
 
     .imagen-port img {
@@ -210,37 +198,6 @@ main .sobre-nosotros {
 .imagen-port:hover .hover-galeria {
     transform: scale(1);
 }
-
-
-/* Nuestro equipo */
-.about-services {
-    background: #f2f2f2;
-    padding-bottom: 30px;
-}
-
-.servicio-cont {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.servicio-ind {
-    width: 28%;
-    text-align: center;
-}
-
-    .servicio-ind img {
-        width: 90%;
-    }
-
-    .servicio-ind h3 {
-        margin: 10px 0;
-    }
-
-    .servicio-ind p {
-        font-weight: 300;
-        text-align: justify;
-    }
 
 /* Pie de página */
 footer {
@@ -280,6 +237,49 @@ footer {
     margin: 20px 0 0 0;
     color: #9e9797;
 }
+
+/* Tabla de Horarios */
+.table-container {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+    .table-container h2 {
+        color: #642a73;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    table th,
+    table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #642a73;
+        color: #fff;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    table tr:hover {
+        background-color: #e0e0e0;
+    }
 
 /* Formulario de Contacto */
 .container {
@@ -370,11 +370,6 @@ form {
         margin-bottom: 20px;
     }
 
-    .cards .card {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
     .servicio-cont {
         flex-direction: column;
     }
@@ -387,5 +382,11 @@ form {
     .logo-video-container {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .imagen-port {
+        width: 95%; /* Ajusta el ancho de las imágenes al 95% en pantallas más pequeñas */
     }
 }
